@@ -1,4 +1,3 @@
-// lib/screens/home/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: () {
-              // provider is responsible for data; screen triggers refresh
+              // screen triggers refresh
               context.read<DataProvider>().refreshData();
             },
             tooltip: 'Refresh Data',
@@ -114,8 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
   return GridView.builder(
     padding: const EdgeInsets.all(16),
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,  // Always 2 columns
-      childAspectRatio: 0.75,  // Fixed ratio (width/height)
+      crossAxisCount: 2, 
+      childAspectRatio: 0.75,
       crossAxisSpacing: 12,
       mainAxisSpacing: 12,
     ),
