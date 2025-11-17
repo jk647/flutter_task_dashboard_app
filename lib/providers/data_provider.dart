@@ -23,7 +23,7 @@ class DataProvider with ChangeNotifier {
       _state = DataState.loading;
       notifyListeners();
 
-      await Future.delayed(const Duration(milliseconds: 800)); // small UX delay
+      await Future.delayed(const Duration(milliseconds: 800));
 
       final String response = await rootBundle.loadString('assets/data.json');
       final List<dynamic> data = json.decode(response) as List<dynamic>;

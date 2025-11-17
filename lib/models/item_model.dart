@@ -1,11 +1,14 @@
+import 'package:flutter/foundation.dart';
+
+@immutable
 class Item {
   final int id;
-  String title;
-  String description;
-  double price;
-  String category;
+  final String title;
+  final String description;
+  final double price;
+  final String category;
 
-  Item({
+  const Item({
     required this.id,
     required this.title,
     required this.description,
@@ -15,7 +18,7 @@ class Item {
 
   factory Item.fromJson(Map<String, dynamic> json) {
     return Item(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
@@ -23,15 +26,13 @@ class Item {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'description': description,
-      'price': price,
-      'category': category,
-    };
-  }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'description': description,
+        'price': price,
+        'category': category,
+      };
 
   Item copyWith({
     int? id,
@@ -48,4 +49,7 @@ class Item {
       category: category ?? this.category,
     );
   }
+
+  @override
+  String toString() => 'Item(id:$id, title:$title)';
 }
