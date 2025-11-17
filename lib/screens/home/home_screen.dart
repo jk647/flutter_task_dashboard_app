@@ -5,9 +5,9 @@ import '../detail/detail_screen.dart';
 import '../../providers/data_provider.dart';
 import '../../models/item_model.dart';
 import '../../extensions/size_ext.dart';
-import '../../widgets/grid_card.dart';
+import 'widgets/grid_card.dart';
 import '../home/service/home_service.dart';
-import '../../widgets/list_card.dart';
+import 'widgets/list_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

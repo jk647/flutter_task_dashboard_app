@@ -1,7 +1,7 @@
 // lib/widgets/grid_card.dart
 import 'package:flutter/material.dart';
-import '../models/item_model.dart';
-import '../extensions/size_ext.dart';
+import '../../../models/item_model.dart';
+import '../../../extensions/size_ext.dart';
 
 class GridCard extends StatelessWidget {
   final Item item;
