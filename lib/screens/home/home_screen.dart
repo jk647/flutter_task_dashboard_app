@@ -111,28 +111,21 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildGridView(List<Item> items) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final width = constraints.maxWidth;
-      final crossAxis = HomeService.computeCrossAxisCount(width);
-      final padding = HomeService.computePadding(width);
-      final aspect = HomeService.computeChildAspectRatio(width, crossAxis);
-
-      return GridView.builder(
-        padding: EdgeInsets.all(padding),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxis,
-          childAspectRatio: aspect,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 18,
-        ),
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return GridCard(item: item, onTap: () => _navigateToDetail(item.id));
-        },
-      );
-    });
-  }
+  return GridView.builder(
+    padding: const EdgeInsets.all(16),
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2,  // Always 2 columns
+      childAspectRatio: 0.75,  // Fixed ratio (width/height)
+      crossAxisSpacing: 12,
+      mainAxisSpacing: 12,
+    ),
+    itemCount: items.length,
+    itemBuilder: (context, index) {
+      final item = items[index];
+      return GridCard(item: item, onTap: () => _navigateToDetail(item.id));
+    },
+  );
+}
 
   Widget _buildListView(List<Item> items) {
     return LayoutBuilder(builder: (context, constraints) {
