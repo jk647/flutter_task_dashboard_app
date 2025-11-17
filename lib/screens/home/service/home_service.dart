@@ -6,7 +6,7 @@ class HomeService {
     if (width >= 1000) return 4;
     if (width >= 800) return 3;
     if (width >= 600) return 2;
-    return 1;
+    return 2; // Changed from 1 to 2 - always show at least 2 columns
   }
 
   /// Suggested padding for lists/grids based on width.
@@ -16,9 +16,9 @@ class HomeService {
   /// Compute a reasonable childAspectRatio for Grid items.
   /// itemWidth = width / crossAxis, baseHeight is an approximate card height.
   /// The returned value is itemWidth / baseHeight.
-  static double computeChildAspectRatio(double width, int crossAxis, {double baseHeight = 320}) {
+  static double computeChildAspectRatio(double width, int crossAxis, {double baseHeight = 280}) {
     if (crossAxis <= 0) crossAxis = 1;
-    final itemWidth = width / crossAxis;
+    final itemWidth = (width / crossAxis) - 24; // Account for spacing
     return itemWidth / baseHeight;
   }
 }

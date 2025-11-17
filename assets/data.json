@@ -26,5 +26,20 @@
     "description": "Create stunning user interfaces",
     "price": 89.99,
     "category": "Design"
+  },
+  {
+    "id": 5,
+    "title": "firebase Training",
+    "description": "learn firebase and its fundamentals",
+    "price": 90.76,
+    "category": "Course"
+  },
+  {
+    "id": 6,
+    "title": "BloC Patterns",
+    "description": "learn bloc and clean code",
+    "price": 66.9,
+    "category": "Course"
+
   }
 ]
